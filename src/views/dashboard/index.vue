@@ -1,7 +1,7 @@
 <!---->
 <template>
 <div>
-<h1>dashboard</h1>
+<h1>dashbofdsklafklsfklsajkfaskj</h1>
 </div>
 </template>
 

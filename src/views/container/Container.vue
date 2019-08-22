@@ -12,6 +12,8 @@
         </div>
         <el-menu
           class="el-menu-vertical-demo"
+          default-active="HelloWorld"
+          router
           @open="handleOpen"
           @close="handleClose"
           :collapse="isCollapse"
@@ -25,11 +27,11 @@
             </template>
             <el-menu-item-group>
               <span slot="title">分组一</span>
-              <el-menu-item index="1-1"><router-link :to="{name : 'HelloWorld'}">HelloWorld</router-link></el-menu-item>
-              <el-menu-item index="1-2">选项2</el-menu-item>
+              <el-menu-item index="HelloWorld">HelloWorld</el-menu-item>
+              <el-menu-item index="article">选项2</el-menu-item>
             </el-menu-item-group>
             <el-menu-item-group title="分组2">
-              <el-menu-item index="1-3">选项3</el-menu-item>
+              <el-menu-item index="dashboard">选项3</el-menu-item>
             </el-menu-item-group>
             <el-submenu index="1-4">
               <span slot="title">选项4</span>
@@ -74,12 +76,6 @@
 
         <el-main class="app-body">
           <template>
-            <el-breadcrumb separator-class="el-icon-arrow-right">
-              <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-              <el-breadcrumb-item>活动管理</el-breadcrumb-item>
-              <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-              <el-breadcrumb-item>活动详情</el-breadcrumb-item>
-            </el-breadcrumb>
             <el-col>
               <el-card shadow="hover" class="card">
                 <router-view />
@@ -100,7 +96,8 @@ export default {
     return {
       username: "",
       isCollapse: false,
-      isCollapseTransition: false
+      isCollapseTransition: false,
+      levelList: []
     };
   },
   created() {},
